@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="six columns">
+      <h3>Create post</h3>
+      <%= form_for @post, html: {multipart: true} do |f| %>
+        <% if @post.errors.any? %>
+          <p>There were <%= @post.errors.count %> errors</p>
+          <% @post.errors.full_messages.each do |msg| %>
+            <p><%= msg %></p>
+          <% end %>
+        <% end %>
+        <div class="field">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.label :tags %>
+          <%= f.text_area :tags %>
+        </div>
+        <div class="field">
+          <%= f.label :organization %>
+          <%= f.select :organization, ["Wikileaks", "Tor Project", "Mozilla", "Voat.co"] %>
+        </div>
+        <div class="field">
+          <%= f.label :nsfw %>
+          <%= f.check_box :nsfw %>
+        </div>
+      </div>
+      <div class="six columns">
+        <% if false %>
+        <!-- Commented out; for cocoon, later -->
+        <h3>Add images</h3>
+        <div id="post_items">
+          <% f.fields_for :post_items do |post_item| %>
+            <%= render 'post_item_fields', f: post_item %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association 'Add Image', f, :post_items, class: "add-button" %>
+          </div>
+        </div>
+        <% end %>
+        <%= f.submit "Create post", class: "button submit-button" %>
+      <% end %>
+    </div>
+    <p>Upon submission you will be taken to the show page where it is advised you save the url so it can be linked to later.  We try to save images uploaded in the recent images section but if your ip address changes or if you're using a proxy this feature won't work.</p>
+  </div>
+</div>
