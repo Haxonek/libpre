@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def create
     params[:post][:ip_address] = request.ip
+    # params[:post][:ip_address] = request.remote_ip
     # not working but am moving on
     @post = Post.new(post_params)
 

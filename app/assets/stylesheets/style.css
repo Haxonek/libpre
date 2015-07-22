@@ -1,0 +1,123 @@
+/*
+    general - could be added to normalize
+*/
+
+.container {
+  margin-top: 1em;
+}
+
+p {
+    font-size: 1.2em;
+    color: #383838;
+    font-family: 'Helvetica', sans-serif;
+}
+
+input[type="file"] {
+}
+
+.submit-button {
+    margin: 1.3rem auto;
+}
+
+.add-button {
+    margin-top: 2rem;
+}
+
+.add-button-container {
+    max-height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+/*
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+*/
+    align-items: center;
+}
+
+.about-button {
+}
+
+/*
+    wrappers
+*/
+
+h1 {
+    border-left: 2px solid #333;
+    border-radius: 5px;
+    padding-left: 5%;
+}
+
+.wrapper {
+    margin-top: 4rem;
+    padding: 3% 5%;
+    border: solid 2px #333;
+    border-radius: 15px;
+    background-color: #fefefe;
+}
+
+.upload-wrapper,
+.nested-fields {
+    border-left: 3px solid #333;
+    padding-left: 1.8rem;
+    margin-top: 2rem;
+}
+
+/*
+    show page styling
+*/
+
+.img-item {
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+.editable > p {
+    font-size: 1.2em;
+    margin-bottom: .5rem;
+    font-weight: 300;
+}
+
+/*
+    footer css
+*/
+
+.footer {
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.footer-item {
+    margin-top: 4rem;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+    text-align: center;
+    color: #333;
+    padding: .7rem 0%;
+    background-color: #fefefe;
+    text-decoration: none;
+    font-size: 1em;
+    border-top: 1px #333 solid;
+    border-left: 1px solid #333;
+    transition: .2s;
+}
+
+.footer-item:hover {
+    background-color: #efefef;
+    color: #333;
+}
+
+.footer-item:active {
+    background-color: #dbdbdb;
+}
