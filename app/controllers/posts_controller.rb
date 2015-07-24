@@ -20,6 +20,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {no_intra_emphasis: true, highlight: true, underline: true, autolink: true, filter_html: true})
+    @post.increment!(:hits, by = 1)
+    # @post.update_attribute(:hits, @post.hits + 1)
+  end
+
   private
 
   def find_post
@@ -27,6 +33,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :organization, :tags, :nsfw, :hits, :ip_address, post_items_attributes: [:id, :description, :_destroy])
+    params.require(:post).permit(:title, :organization, :tags, :nsfw, :hits, :ip_address, post_items_attributes: [:id, :description, :image_title, :_destroy])
   end
 end
