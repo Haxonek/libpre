@@ -1,13 +1,11 @@
 
 <div class="container">
   <h1><%= @post.title %> | <%= @post.hits %> hits</h1>
-  <% if false %>
-  <!-- comment out stuff, reusing old code -->
   <% @post.post_items.each do |post_item| %>
     <div class="wrapper editable">
+      <h1><%= post_item.image_title %></h1>
       <%= image_tag "http://placekitten.com/900/600", class: "img-item" %>
       <p><%= post_item.description %></p>
     </div>
-  <% end %>
   <% end %>
 </div>
