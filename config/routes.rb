@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :posts
-  get 'p' => 'posts/index'
+  get 'p' => 'posts#index'
   get '/p/:id' => 'posts#show'
+  get 'about' => 'static_pages#about'
 
   root 'posts#index'
 
