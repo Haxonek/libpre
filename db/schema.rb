@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150722191917) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
-    t.string   "tags"
     t.string   "organization"
     t.integer  "hits",         default: 0, null: false
     t.boolean  "nsfw"

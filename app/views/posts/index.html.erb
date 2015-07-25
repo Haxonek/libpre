@@ -1,11 +1,11 @@
  <div class="container">
   <h1>libpre</h1>
   <div class="row wrapper">
-    <div class="four column add-button-wrapper">
-      <%= link_to "About us", about_path, class: "button about-button" %>
+    <div class="four columns add-button-container">
+      <button>About us</button>
     </div>
-    <div class="eight column">
-      <h5>Our mission is to help support an open, free internet.  Each time you host an image with us the profits are donated to the organization of your chooseing.</h5>
+    <div class="eight columns">
+      <h5>Our mission is to help support an open, free internet.  Each time you host an image with us the profits are donated to the organization of your choosing.</h5>
     </div>
   </div>
 
@@ -15,6 +15,10 @@
     <h3>Recent Links</h3>
     <% @posts.each do |p| %>
       <span><%= link_to p.title, p %></span>
+    <% end %>
+
+    <% if false %>
+    <%= @posts.title %>
     <% end %>
 
   </div>

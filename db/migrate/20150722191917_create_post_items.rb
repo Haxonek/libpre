@@ -3,7 +3,7 @@ class CreatePostItems < ActiveRecord::Migration
     create_table :post_items do |t|
       t.string :image_title
       t.text :description
-      t.belongs_to :post, index: true #, foreign_key: true
+      t.belongs_to :post, index: true, foreign_key: true
     end
   end
 end

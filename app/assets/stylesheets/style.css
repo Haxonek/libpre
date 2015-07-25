@@ -1,14 +1,9 @@
-/*
-    general - could be added to normalize
-*/
-
 .container {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 
 p {
     font-size: 1.2em;
-    color: #383838;
     font-family: 'Helvetica', sans-serif;
 }
 
@@ -41,12 +36,6 @@ input[type="file"] {
     align-items: center;
 }
 
-.about-button {
-}
-
-/*
-    wrappers
-*/
 
 h1 {
     border-left: 2px solid #333;
@@ -62,16 +51,11 @@ h1 {
     background-color: #fefefe;
 }
 
-.upload-wrapper,
-.nested-fields {
+.upload-wrapper, .nested-fields {
     border-left: 3px solid #333;
     padding-left: 1.8rem;
     margin-top: 2rem;
 }
-
-/*
-    show page styling
-*/
 
 .img-item {
     max-width: 100%;
@@ -84,9 +68,9 @@ h1 {
     font-weight: 300;
 }
 
-/*
-    footer css
-*/
+.editable > h4 {
+  font-weight: bold;
+}
 
 .footer {
     width: 100%;
@@ -120,4 +104,27 @@ h1 {
 
 .footer-item:active {
     background-color: #dbdbdb;
+}
+
+.alert {
+    width: 100%;
+    border-radius: 15px;
+    padding: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 1em;
+    transition: all .3s;
+}
+
+.alert:hover {
+    opacity: .2;
+}
+
+.alert-success {
+    background-color: rgba(75, 255, 68, 0.68);
+}
+
+.alert-failure {
+    background-color: rgba(255, 93, 55, 0.68);
 }
