@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
+  # include PostsHelper
   before_action :find_post, only: [:show]
 
   def index
-    @posts = Post.all.where(ip_address: request.remote_ip, nsfw: false).order("created_at DESC")
+    @posts = Post.all.where(ip_address: request.remote_ip, nsfw: false).order("created_at DESC").first(12)
     # @posts = Post.all.order("created_at DESC") # to print everything
     @post = Post.new
   end
 
   def create
-    ip = request.remote_ip # request.ip
+    ip = request.remote_ip.to_s # request.ip
     unless ip.length < 7 || ip.length > 15
       params[:post][:ip_address] = ip
     end
@@ -30,6 +31,8 @@ class PostsController < ApplicationController
 
     @post.increment!(:hits, by = 1)
     # @post.update_attribute(:hits, @post.hits + 1)
+    View.create(organization: @post.organization, post_id: @post.id, viewed_at: Time.now, ip_address: request.remote_ip)
+    # create_view # I want to use an external method though :/
   end
 
   private
@@ -39,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :organization, :nsfw, :hits,
-                :ip_address, post_items_attributes: [:id, :description, :image_title, :_destroy])
+    params.require(:post).permit(:title, :organization, :nsfw, :hits, :ip_address,
+                post_items_attributes: [:id, :description, :image_title, :_destroy])
   end
 end

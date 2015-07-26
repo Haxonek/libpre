@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  viewed_at: 
+  organization: 
+  ip_address: 
+  post_id: 
+
+two:
+  viewed_at: 
+  organization: 
+  ip_address: 
+  post_id: 
