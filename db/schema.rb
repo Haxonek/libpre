@@ -11,12 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725133427) do
+ActiveRecord::Schema.define(version: 20150727200711) do
 
   create_table "post_items", force: :cascade do |t|
-    t.string  "image_title"
-    t.text    "description"
-    t.integer "post_id"
+    t.string   "image_title"
+    t.text     "description"
+    t.integer  "post_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "post_items", ["post_id"], name: "index_post_items_on_post_id"

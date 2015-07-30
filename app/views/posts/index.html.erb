@@ -2,7 +2,7 @@
   <h1>libpre</h1>
   <div class="row wrapper">
     <div class="four columns add-button-container">
-      <button>About us</button>
+      <a href="<%= about_path %>" class="button" >About us</a>
     </div>
     <div class="eight columns">
       <h5>Our mission is to help support an open, free internet.  Each time you host an image with us the profits are donated to the organization of your choosing.</h5>
@@ -11,15 +11,14 @@
 
   <%= render 'form' %>
 
-  <div class="wrapper">
-    <h3>Recent Links</h3>
-    <% @posts.each do |p| %>
-      <span><%= link_to p.title, p %></span>
-    <% end %>
-
-    <% if false %>
-    <%= @posts.title %>
-    <% end %>
-
-  </div>
+  <% unless @posts.empty? %>
+    <div class="wrapper">
+      <h3>Are these posts yours?</h3>
+      <ul class="local-links">
+        <% @posts.each do |p| %>
+          <li><%= link_to p.title, p %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>
