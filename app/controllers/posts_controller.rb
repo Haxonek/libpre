@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show]
+  include PostsHelper
 
   def index
-    @posts = Post.all.where(nsfw: false).order("created_at DESC").first(12)
-    # @posts = Post.all.order("created_at DESC") # to print everything
     @post = Post.new
+    # @posts = Post.all.where(nsfw: false, ip_address: request.remote_ip).order("created_at DESC").first(12)
+    @posts = Post.all.order("created_at DESC").first(12) # to print everything
   end
 
   def create
@@ -13,9 +14,11 @@ class PostsController < ApplicationController
       params[:post][:ip_address] = ip
     end
 
-    @post = Post.create(post_params)
+    params[:post][:id] = generate_id
+
+    @post = Post.new(post_params)
     if @post.save
-      flash[:success] = "Your post was successfully created.  We recomend saving the url to this page so it can be referenced later; although we make guesses at your images we cannot garentee your image will appear and all nsfw will not.  Images may be deleted after six months of not being viewed."
+      flash[:success] = "Your post was successfully created.  We recomend saving the url to this page so it can be referenced later; your image(s) may be deleted after six months of not being viewed."
       redirect_to @post
     else
       flash[:failure] = "There was an error saving your post"
@@ -43,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :organization, :nsfw, :hits,
+    params.require(:post).permit(:id, :title, :organization, :nsfw, :hits,
                 :ip_address, post_items_attributes: [:id, :image_title,
                 :image, :description, :_destroy])
   end
