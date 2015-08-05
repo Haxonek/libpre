@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   # routes to id's
-  get 'contact_us' => 'static_pages/about#contact_us'
+  # get 'contact_us' => 'static_pages/about#contact_us'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
