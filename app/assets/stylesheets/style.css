@@ -1,3 +1,7 @@
+/*
+    general - could be added to normalize
+*/
+
 .container {
     margin-top: 1em;
 }
@@ -200,11 +204,13 @@ h1 {
 .local-links > .local-item {
     width: 31%;
     padding: 1em 0em;
-    background-color: rgba(97, 189, 109, 0.8);
+    background-color: rgba(97, 189, 109, 0.7);
     border-radius: 5px;
     display: inline-block;
     text-align: center;
-    border: solid 3px rgba(97, 189, 109, 0.8);
+    border: solid 3px rgba(97, 189, 109, 0.7);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
     vertical-align: top;
     margin: .5rem 0;
 }
@@ -248,11 +254,7 @@ h1 {
 
 .image-zoom:focus + .img-item {
     position: relative;
+    max-height: none;
     top: 0;
     width: 100%;
-    max-height: none;
-}
-
-.image-zoom:focus + .editable {
-    padding: 0;
 }

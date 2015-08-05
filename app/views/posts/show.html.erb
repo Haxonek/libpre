@@ -1,3 +1,5 @@
+<% provide(:title, @post.title + " | Procedes to " + @post.organization) %>
+
 <div class="container">
   <h1><%= @post.title %> | <%= @post.hits %> hits</h1>
   <% @post.post_items.each do |post_item| %>
