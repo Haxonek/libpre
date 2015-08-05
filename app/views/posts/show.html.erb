@@ -7,7 +7,7 @@
       <% end %>
       <% unless post_item.image.blank? %>
         <button class="image-zoom">click to zoom</button>
-        <%= image_tag post_item.image.url(:full), class: "img-item" %>
+        <%= image_tag post_item.image.url(:original), class: "img-item" %>
       <% end %>
       <% unless post_item.description.blank? %>
         <p><%= @markdown.render(post_item.description).html_safe %></p>

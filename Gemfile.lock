@@ -121,6 +121,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    recaptcha (0.4.0)
     redcarpet (3.3.2)
     ruby-imagespec (0.3.1)
     sdoc (0.4.1)
@@ -160,6 +161,7 @@ DEPENDENCIES
   paperclip-compression (~> 0.3.9)
   pg
   rails (= 4.2.3)
+  recaptcha (~> 0.4.0)
   redcarpet (~> 3.3.2)
   sdoc (~> 0.4.0)
   spring

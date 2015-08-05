@@ -23,6 +23,8 @@ gem 'redcarpet', '~> 3.3.2'
 # Image processing/compression
 gem 'paperclip-compression', '~> 0.3.9'
 
+gem 'recaptcha', '~> 0.4.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

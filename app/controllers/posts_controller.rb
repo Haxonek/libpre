@@ -4,8 +4,8 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    # @posts = Post.all.where(nsfw: false, ip_address: request.remote_ip).order("created_at DESC").first(12)
-    @posts = Post.all.order("created_at DESC").first(12) # to print everything
+    @posts = Post.all.where(nsfw: false, ip_address: request.remote_ip).order("created_at DESC").first(12)
+    # @posts = Post.all.order("created_at DESC").first(12) # to print everything
   end
 
   def create
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     params[:post][:id] = generate_id
 
     @post = Post.new(post_params)
-    if @post.save
+    if @post.save && verify_recaptcha
       flash[:success] = "Your post was successfully created.  We recomend saving the url to this page so it can be referenced later; your image(s) may be deleted after six months of not being viewed."
       redirect_to @post
     else
