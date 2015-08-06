@@ -76,4 +76,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # For a3 image upload/saving
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['libpre-image-upload'] #ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AKIAIZY7JFSGNQGEXNXQ'] #ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['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'] #ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
 end

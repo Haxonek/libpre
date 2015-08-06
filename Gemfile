@@ -24,6 +24,8 @@ gem 'redcarpet', '~> 3.3.2'
 gem 'paperclip-compression', '~> 0.3.9'
 
 gem 'recaptcha', '~> 0.4.0'
+# For file/image saving
+gem 'aws-sdk', '~> 2.1.12'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

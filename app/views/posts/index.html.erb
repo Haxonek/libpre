@@ -7,13 +7,13 @@
       <a href="<%= about_path %>" class="button button-primary" >About us</a>
     </div>
     <div class="eight columns">
-      <h5>Our mission is to help support an open, free internet.  Each time you host an image with us the profits are donated to the organization of your choosing.</h5>
+      <h5>Our mission is to help support an open, free internet.  Each time you host an image with us the profits are donated to the organization that supports an open, free internet.</h5>
     </div>
   </div>
 
   <%= render 'form' %>
 
-  <% if @posts.count != 0 %>
+  <% unless @posts.count == 0 %>
     <div class="wrapper">
       <h3>Are these posts yours?</h3>
       <div class="local-links">
