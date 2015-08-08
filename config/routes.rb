@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  resources :posts
-  # get 'p' => 'posts#index'
-  # get '/p/:id' => 'posts#show'
-  get '/:id' => 'posts#show'
-  get 'about' => 'static_pages#about'
-
   root 'posts#index'
+
+  resources :posts do
+    # get 'p' => 'posts#index'
+    # get '/p/:id' => 'posts#show'
+    get '/:id' => 'posts#show'
+  end
+  
+  get 'about' => 'static_pages#about'
 
   # routes to id's
   # get 'contact_us' => 'static_pages/about#contact_us'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
