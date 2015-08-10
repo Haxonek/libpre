@@ -4,7 +4,7 @@
     <div class="six columns">
       <h3>Create post</h3>
       <% if @post.errors.any? %>
-        <p>There were <%= @post.errors.count %> errors</p>
+        <p>There were <%= @post.errors.count %> error(s)</p>
         <% @post.errors.full_messages.each do |msg| %>
           <p class="error"><%= msg %></p>
         <% end %>
