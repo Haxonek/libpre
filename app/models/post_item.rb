@@ -6,6 +6,6 @@ class PostItem < ActiveRecord::Base
 
   has_attached_file :image#, # Maybe comment out compression to see if that's the problem?
                     # processors: [:thumbnail, :compression]
-  validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/png"] }
-  validates_with AttachmentSizeValidator, :attributes => :image, :less_than => 8.megabytes
+  # validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/png"] }
+  # validates_with AttachmentSizeValidator, :attributes => :image, :less_than => 8.megabytes
 end
