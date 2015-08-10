@@ -50,4 +50,6 @@ end
 
 group :production do
   gem 'pg'
+  # interfaces imagemagick and app on heroku
+  gem 'rmagick', '~> 2.15.3'
 end
