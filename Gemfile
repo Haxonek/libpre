@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -21,7 +19,8 @@ gem 'cocoon', '~> 1.2.6'
 # utilizes markdown in both title and description
 gem 'redcarpet', '~> 3.3.2'
 # Image processing/compression
-gem 'paperclip-compression', '~> 0.3.9'
+# gem 'paperclip-compression', '~> 0.3.9'
+gem 'paperclip', '~> 4.3.0'
 # post captcha
 gem 'recaptcha', '~> 0.4.0'
 # For file/image saving
