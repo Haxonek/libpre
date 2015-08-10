@@ -80,7 +80,6 @@ Rails.application.configure do
   # For a3 image upload/saving
   config.paperclip_defaults = {
     :storage => :s3,
-    :s3_protocol => 'http',
     :s3_credentials => {
       :bucket => ENV['S3_BUCKET_NAME'], #ENV['libpre-image-upload'], #ENV['S3_BUCKET_NAME'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'], #ENV['AKIAIZY7JFSGNQGEXNXQ'], #ENV['AWS_ACCESS_KEY_ID'],
