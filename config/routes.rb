@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   root 'posts#index'
 
-  resources :posts do
-    # get 'p' => 'posts#index'
-    # get '/p/:id' => 'posts#show'
-    get '/:id' => 'posts#show'
-  end
-  
+  resources :posts
+  # get 'p' => 'posts#index'
+  # get '/p/:id' => 'posts#show'
+  get ':id' => 'posts#show'
+
   get 'about' => 'static_pages#about'
 
   # routes to id's
