@@ -82,8 +82,8 @@ Rails.application.configure do
     :storage => :s3,
     :s3_credentials => {
       :bucket => ENV['S3_BUCKET_NAME'], #ENV['libpre-image-upload'], #ENV['S3_BUCKET_NAME'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'], #ENV['AKIAIZY7JFSGNQGEXNXQ'], #ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] #ENV['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'] #ENV['AWS_SECRET_ACCESS_KEY']
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'], #ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] #ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 end
