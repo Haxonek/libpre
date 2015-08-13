@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 # maybe this will help with heroku?
 ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -25,8 +24,8 @@ gem 'paperclip-compression', '~> 0.3.9'
 # gem 'paperclip', '~> 4.3.0'
 # post captcha
 gem 'recaptcha', '~> 0.4.0'
-# For file/image saving
-gem 'aws-sdk', '~> 2.1.12'
+# For file/image saving, uncompatable beyond 2.0
+gem 'aws-sdk', '< 2.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -45,7 +44,6 @@ group :development, :test do
   gem 'spring'
 
   # Use sqlite3 as the database for Active Record
-  # Can't have in heroku, moved here
   gem 'sqlite3'
 end
 
@@ -53,4 +51,5 @@ group :production do
   gem 'pg'
   # interfaces imagemagick and app on heroku
   gem 'rmagick', '~> 2.15.3'
+  gem 'rails_12factor'
 end
