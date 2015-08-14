@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-# maybe this will help with heroku?
 ruby '2.2.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use Uglifier as compressor for JavaScript assets

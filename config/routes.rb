@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
   get 'about' => 'static_pages#about'
+  get 'markdown' => 'static_pages#markdown'
 
   resources :posts
   # get 'p' => 'posts#index'

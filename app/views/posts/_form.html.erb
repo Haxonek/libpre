@@ -15,7 +15,7 @@
       </div>
       <div class="field">
         <%= f.label :organization %>
-        <%= f.select :organization, ["Wikileaks", "Tor Project", "Mozilla", "Voat.co"] %>
+        <%= f.select :organization, ["Wikileaks", "Tor Project", "Mozilla", "Voat.co", "EFF"] %>
       </div>
       <div class="field">
         <%= f.label :nsfw %>
@@ -24,7 +24,8 @@
 
     </div>
     <div class="six columns">
-      <h3>Add images</h3>
+      <h3 class="no-bottom-margin">Add images</h3>
+      <h6 class="markdown-link no-bottom-margin">Descriptions/titles may contain <%= link_to "markdown", markdown_path %></h6>
       <div id="post_items">
         <% f.fields_for :post_items do |post_item| %>
           <%= render 'post_item_fields', f: post_item %>

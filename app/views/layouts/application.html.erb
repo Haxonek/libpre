@@ -9,13 +9,16 @@
 <body>
 
   <% flash.each do |key, msg| %>
-    <div class="alert alert-<%= key %>"><%= msg %></div>
+    <div class="alert alert-<%= key %>"><%= msg.html_safe %></div>
   <% end %>
 
   <%= yield %>
 
-  <%= render 'layouts/footer' %>
-
+  <% if yield(:noFooter).empty? %>
+    <%= render 'layouts/footer' %>
+  <% else %>
+    <%= render 'layouts/showFooter' %>
+  <% end %>
 
 </body>
 </html>

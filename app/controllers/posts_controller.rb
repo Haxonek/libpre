@@ -18,7 +18,8 @@ class PostsController < ApplicationController
 
     @post = Post.new(post_params)
     if @post.save && verify_recaptcha
-      flash[:success] = "Your post was successfully created.  We recomend saving the url to this page so it can be referenced later; your image(s) may be deleted after six months of not being viewed."
+      post_id = @post.id.to_s
+      flash[:success] = "Your post was successfully created.  We recomend saving the url to this page (<a href=\"http://libpre.com/" + post_id + "\">http://libpre.com/" + post_id + "</a>) so it can be referenced later; your image(s) may be deleted after six months of not being viewed."
       redirect_to @post
     else
       flash[:failure] = "There was an error saving your post"
@@ -34,6 +35,9 @@ class PostsController < ApplicationController
                 autolink: true})
 
     @post.increment!(:hits, by = 1)
+
+    # Should only create if id != ip_address already logged
+    # do later thou
     View.create(organization: @post.organization, post_id: @post.id,
                 viewed_at: Time.now, ip_address: request.remote_ip)
     # create_view # I want to use an external method though :/
