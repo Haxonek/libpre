@@ -1,0 +1,12 @@
+
+<footer class="footer">
+  <%= link_to "Home", root_path, class: "footer-item" %>
+  <%= link_to "About Us", about_path, class: "footer-item" %>
+  <%= link_to "twitter", "www.twitter.com", class: "footer-item" %>
+  <a class="footer-item item-information">Info</a>
+  <ul class="hidden-item-list">
+    <li><%= @post.hits %> Hits</li>
+    <li><%= @post.organization %></li>
+    <li><%= @post.created_at.to_time.strftime('%B %e, %Y') %></li>
+  </ul>
+</footer>
