@@ -6,6 +6,17 @@ module PostsHelper
     end
     id
   end
+
+  def get_valid_ip
+    ip_address = request.remote_ip.to_s
+    ip_l = ip_address.length
+
+    if ip_l >= 7 && ip_l <= 15
+      ip_address
+    else
+      nil
+    end
+  end
   #
   # def create_view
   #   # Seems like the best way to do this but idk why it won't work

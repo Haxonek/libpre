@@ -34,13 +34,14 @@ class PostsController < ApplicationController
                 {no_intra_emphasis: true, highlight: true, underline: true,
                 autolink: true})
 
-    @post.increment!(:hits, by = 1)
 
-    # Should only create if id != ip_address already logged
-    # do later thou
-    View.create(organization: @post.organization, post_id: @post.id,
-                viewed_at: Time.now, ip_address: request.remote_ip)
-    # create_view # I want to use an external method though :/
+    ip_address = get_valid_ip
+    unless ip_address.nil?
+      if View.find(id: @post.id, ip_address: ip_address).empty?
+        View.create(organization: @post.organization, post_id: @post.id, viewed_at: Time.now, ip_address: ip_address)
+        @post.increment!(:hits, by = 1)
+      end
+    end
   end
 
   private
