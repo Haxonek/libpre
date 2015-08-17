@@ -36,8 +36,8 @@ class PostsController < ApplicationController
 
 
     ip_address = get_valid_ip
-    unless ip_address.nil? || ip_address.empty?
-      if View.find(id: @post.id, ip_address: ip_address).empty?
+    unless ip_address.nil?
+      if View.find_by_id_and_ip_address(@post.id, ip_address).nil?
         View.create(organization: @post.organization, post_id: @post.id, viewed_at: Time.now, ip_address: ip_address)
         @post.increment!(:hits, by = 1)
       end
@@ -52,7 +52,7 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:id, :title, :organization, :nsfw, :hits,
-                :ip_address, post_items_attributes: [:id, :image_title,
-                :image, :description, :_destroy])
+                :ip_address, post_items_attributes: [:id, :image_title, :image,
+                :description, :_destroy])
   end
 end

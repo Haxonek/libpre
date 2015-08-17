@@ -37,8 +37,8 @@
  */
 
  * {
-     font-family: 'Raleway';
- }
+     font-family: 'Raleway', 'Helvetica', sans-serif;
+}
 
  .container {
      margin-top: 1em;
