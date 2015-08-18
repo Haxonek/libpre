@@ -14,7 +14,7 @@
 
   <%= render 'form' %>
 
-  <% unless @posts.count == 0 %>
+  <% unless @posts.nil? || @posts.count == 0 %>
     <div class="wrapper">
       <h3>Are these posts yours?</h3>
       <div class="local-links">

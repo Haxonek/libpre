@@ -4,12 +4,12 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    @posts = Post.all.where(nsfw: false, ip_address: request.remote_ip).order("created_at DESC").first(12)
+    @posts = Post.all.where(nsfw: false, ip_address: get_valid_ip).order("created_at DESC").first(12)
     # @posts = Post.all.order("created_at DESC").first(12) # to print everything
   end
 
   def create
-    ip = request.remote_ip.to_s
+    ip = get_valid_ip
     unless ip.length <= 7 || ip.length >= 15
       params[:post][:ip_address] = ip
     end
