@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
     ip_address = get_valid_ip
     unless ip_address.nil?
-      if View.find_by_id_and_ip_address(@post.id, ip_address).nil?
+      if View.find_by_post_id_and_ip_address(@post.id, ip_address).nil?
         View.create(organization: @post.organization, post_id: @post.id, viewed_at: Time.now, ip_address: ip_address)
         @post.increment!(:hits, by = 1)
       end
