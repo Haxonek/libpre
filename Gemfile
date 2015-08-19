@@ -25,6 +25,8 @@ gem 'paperclip-compression', '~> 0.3.10'
 gem 'recaptcha', '~> 0.4.0'
 # For file/image saving, uncompatable beyond 2.0
 gem 'aws-sdk', '< 2.0'
+# compression and minify CSS and JavaScript
+gem 'jammit', '~> 0.6.6'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
