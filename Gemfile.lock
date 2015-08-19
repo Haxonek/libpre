@@ -170,7 +170,7 @@ DEPENDENCIES
   cocoon (~> 1.2.6)
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip-compression (~> 0.3.9)
+  paperclip-compression (~> 0.3.10)
   pg
   rails (= 4.2.3)
   rails_12factor

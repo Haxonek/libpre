@@ -5,7 +5,7 @@ class PostItem < ActiveRecord::Base
   validates  :description, length: {maximum: 65534}
 
   has_attached_file :image, # Maybe comment out compression to see if that's the problem?
-                    :styles => {thumbnail: "300x300#"},
+                    :styles => {thumbnail: "300x300#", original: ""},
                     processors: [:thumbnail, :compression]
 
   validates :image,

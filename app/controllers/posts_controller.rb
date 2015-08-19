@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
     ip = get_valid_ip
-    unless ip.length <= 7 || ip.length >= 15
+    unless ip.nil?
       params[:post][:ip_address] = ip
     end
 

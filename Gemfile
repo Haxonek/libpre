@@ -20,8 +20,7 @@ gem 'cocoon', '~> 1.2.6'
 # utilizes markdown in both title and description
 gem 'redcarpet', '~> 3.3.2'
 # Image processing/compression
-gem 'paperclip-compression', '~> 0.3.9'
-# gem 'paperclip', '~> 4.3.0'
+gem 'paperclip-compression', '~> 0.3.10'
 # post captcha
 gem 'recaptcha', '~> 0.4.0'
 # For file/image saving, uncompatable beyond 2.0
