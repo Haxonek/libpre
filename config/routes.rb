@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
+  resources :posts
+
   root 'posts#index'
   get 'about' => 'static_pages#about'
   get 'markdown' => 'static_pages#markdown'
   # get 'organizations' => 'about#organizations'
-
-  resources :posts
-  # get 'p' => 'posts#index'
-  # get '/p/:id' => 'posts#show'
   get ':id' => 'posts#show'
 
   # routes to id's
