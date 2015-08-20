@@ -53,4 +53,5 @@ group :production do
   # interfaces imagemagick and app on heroku
   gem 'rmagick', '~> 2.15.3'
   gem 'rails_12factor'
+  gem 'heroku_rails_deflate'
 end
