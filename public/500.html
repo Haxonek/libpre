@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>500 error</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="assets/skeleton.css" rel="stylesheet">
+    <link href="assets/normalize.css" rel="stylesheet">
+    <link href="assets/application.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -49,9 +51,9 @@
             <h2 class="center big-font">500 error</h2>
             <br>
             <br>
-            <p>I'm gonna be honest; I have no idea what happened.  If it's persistent though don't be afraid to email me at the email on the contacts page.</p>
+            <p>I'm gonna be honest; I have no idea what happened.  If it's persistent though don't be afraid to <a href="/about#contact_us">email me</a> on the contacts page.</p>
             <br>
-            <%= link_to "Take me home...", root_path, class: 'right' %>
+            <a href="/" class="right">Take me home...</a>
             <br>
         </div>
     </div>

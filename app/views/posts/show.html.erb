@@ -3,7 +3,7 @@
 <!-- ^^ A terrible way to deal with this, but I can't get a boolean to work here :( -->
 
 <div class="container">
-  <h1><%= @post.title %></h1>
+  <h1 class="post-title"><%= @post.title %></h1>
   <% @post.post_items.each do |post_item| %>
     <div class="wrapper editable">
       <% unless post_item.image_title.blank? %>

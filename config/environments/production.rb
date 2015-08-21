@@ -87,7 +87,7 @@ Rails.application.configure do
     }
   }
 
-  config.serve_static_assets = true
+  config.serve_static_files = true # from .serve_static_assets
   config.assets.compress = true
   # config.assets.compile = true
   # config.assets.digest = true

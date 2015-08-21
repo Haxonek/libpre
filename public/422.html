@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>404 error</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <title>422 error</title>
+    <link href="assets/skeleton.css" rel="stylesheet">
+    <link href="assets/normalize.css" rel="stylesheet">
+    <link href="assets/application.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -28,6 +30,8 @@
             padding: 3em;
             display: flex;
             -webkit-align-items: center;
+            -moz-align-items: center;
+            -o-align-items: center;
             align-items: center;
             height: 100%;
             width: 100%;
@@ -35,6 +39,8 @@
         .wrapper {
             width: 85%;
             -webkit-align-items: center;
+            -moz-align-items: center;
+            -o-align-items: center;
             align-items: center;
             vertical-align: middle;
             margin: auto;
@@ -46,12 +52,13 @@
         <div class="wrapper">
             <h2 class="bold center">Well This Sucks</h2>
             <br>
-            <h2 class="center big-font">404 error</h2>
+            <h2 class="center big-font">422 error</h2>
             <br>
             <br>
-            <p>The page you were looking for doesn't exist</p>
+            <p>The change you wanted was rejected.</p>
+            <p>Maybe you tried to change something you weren't supposed to?</p>
             <br>
-            <%= link_to "Take me home...", root_path, class: 'right' %>
+            <a href="index.html" class="right">Take me home...</a>
             <br>
         </div>
     </div>

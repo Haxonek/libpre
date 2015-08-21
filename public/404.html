@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>422 error</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <title>404 error</title>
+    <link href="assets/skeleton.css" rel="stylesheet">
+    <link href="assets/normalize.css" rel="stylesheet">
+    <link href="assets/application.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -46,13 +48,12 @@
         <div class="wrapper">
             <h2 class="bold center">Well This Sucks</h2>
             <br>
-            <h2 class="center big-font">422 error</h2>
+            <h2 class="center big-font">404 error</h2>
             <br>
             <br>
-            <p>The change you wanted was rejected.</p>
-            <p>Maybe you tried to change something you didn't have access to.</p>
+            <p>The page you were looking for doesn't exist</p>
             <br>
-            <%= link_to "Take me home...", root_path, class: 'right' %>
+            <a href="index.html" class="right">Take me home...</a>
             <br>
         </div>
     </div>
