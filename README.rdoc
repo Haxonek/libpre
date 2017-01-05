@@ -1,28 +1,5 @@
-== README
+== Libpre
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This was a project idea of mine which was (for the most part) finished in Aug, 2015.  Although I never hosted it I did finish it, and it served as an image hosting platform like imgur, however the idea was to donate the proceeds to charity.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To keep it simple there were no accounts, however images were compressed and it guessed at images you posted by your ip, so that even without an account you could still look up images you've recently posted.  When I published it, it was hosted/tested on heroku using aws, however again it was always under the free version and unfortunately never served production.
